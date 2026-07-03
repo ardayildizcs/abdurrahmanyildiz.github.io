@@ -1,125 +1,1069 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arda Yıldız</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Arda YILDIZ | Senior Software Engineer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
-        body {
-            font-family: 'Verdana', sans-serif;
-            background-color: #f6f8fa;
-            text-align: left;
-            color: #333333;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      :root {
+        --bg: #ffffff;
+        --text: #111111;
+        --gray: #666;
+        --light: #f5f5f7;
+        --border: #e8e8e8;
+        --accent: #0071e3;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Inter, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        overflow-x: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      section {
+        max-width: 1280px;
+        margin: auto;
+        padding: 120px 40px;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+
+        background: rgba(255, 255, 255, 0.72);
+
+        backdrop-filter: blur(30px);
+
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .nav {
+        height: 78px;
+
+        max-width: 1280px;
+
+        margin: auto;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        padding: 0 40px;
+      }
+
+      .logo {
+        font-size: 22px;
+
+        font-weight: 700;
+
+        letter-spacing: -0.5px;
+      }
+
+      .menu {
+        display: flex;
+
+        gap: 35px;
+
+        font-size: 15px;
+
+        color: #666;
+      }
+
+      .menu a {
+        transition: 0.25s;
+      }
+
+      .menu a:hover {
+        color: #000;
+      }
+
+      .hero {
+        min-height: 100vh;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 100px;
+      }
+
+      .left {
+        flex: 1;
+      }
+
+      .right {
+        flex: 1;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+      }
+
+      .small {
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        padding: 10px 18px;
+
+        border-radius: 999px;
+
+        background: #f5f5f7;
+
+        font-size: 14px;
+
+        font-weight: 600;
+
+        margin-bottom: 40px;
+      }
+
+      .dot {
+        width: 10px;
+
+        height: 10px;
+
+        background: #2ecc71;
+
+        border-radius: 50%;
+
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
         }
 
-        header {
-            background-color: #fff;
-            color: #ffffff;
-            text-align: center;
-            padding: 2em 10px;
-            position: relative;
+        50% {
+          transform: scale(1.35);
         }
 
-        .profile-pic {
-            width: 170px;
-            height: 170px;
-            border-radius: 12%;
-            object-fit: cover;
-            position: absolute;
-            left: 23%;
-            top: 50%;
-            transform: translateY(-50%);
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      h1 {
+        font-size: 84px;
+
+        line-height: 0.95;
+
+        letter-spacing: -4px;
+
+        font-weight: 900;
+
+        margin-bottom: 30px;
+      }
+
+      .gradient {
+        background: linear-gradient(90deg, #111, #444, #999);
+
+        -webkit-background-clip: text;
+
+        -webkit-text-fill-color: transparent;
+      }
+
+      .subtitle {
+        font-size: 24px;
+
+        line-height: 1.7;
+
+        color: #666;
+
+        max-width: 650px;
+
+        margin-bottom: 45px;
+      }
+
+      .buttons {
+        display: flex;
+
+        gap: 20px;
+      }
+
+      .btn {
+        padding: 18px 32px;
+
+        border-radius: 14px;
+
+        font-weight: 600;
+
+        transition: 0.3s;
+      }
+
+      .primary {
+        background: #111;
+
+        color: #fff;
+      }
+
+      .primary:hover {
+        transform: translateY(-3px);
+
+        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+      }
+
+      .secondary {
+        border: 1px solid #ddd;
+      }
+
+      .secondary:hover {
+        background: #fafafa;
+      }
+
+      .photo {
+        width: 420px;
+
+        height: 520px;
+
+        background: #f7f7f7;
+
+        border-radius: 36px;
+
+        overflow: hidden;
+
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
+      }
+
+      .photo img {
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+      }
+
+      .scroll {
+        margin-top: 80px;
+
+        font-size: 14px;
+
+        color: #888;
+
+        letter-spacing: 2px;
+
+        text-transform: uppercase;
+      }
+
+      .arrow {
+        font-size: 28px;
+
+        margin-top: 15px;
+
+        animation: down 2s infinite;
+      }
+
+      @keyframes down {
+        0% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(12px);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .stats {
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 28px;
+
+        margin-top: 40px;
+      }
+
+      .stat {
+        padding: 45px;
+
+        background: #fafafa;
+
+        border-radius: 30px;
+
+        transition: 0.35s;
+      }
+
+      .stat:hover {
+        transform: translateY(-8px);
+
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+      }
+
+      .number {
+        font-size: 64px;
+
+        font-weight: 800;
+
+        letter-spacing: -2px;
+      }
+
+      .label {
+        margin-top: 10px;
+
+        color: #666;
+
+        font-size: 17px;
+      }
+
+      @media (max-width: 1000px) {
+        .hero {
+          flex-direction: column-reverse;
+
+          text-align: center;
+
+          padding-top: 120px;
+        }
+
+        h1 {
+          font-size: 56px;
+        }
+
+        .subtitle {
+          font-size: 20px;
+
+          margin: auto auto 40px;
+        }
+
+        .buttons {
+          justify-content: center;
+        }
+
+        .photo {
+          width: 320px;
+
+          height: 400px;
+        }
+
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .menu {
+          display: none;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .stats {
+          grid-template-columns: 1fr;
         }
 
         section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+          padding: 90px 24px;
         }
 
-        h1, h5 {
-            color: #222;
+        h1 {
+          font-size: 42px;
+
+          letter-spacing: -2px;
         }
 
-        p {
-            line-height: 1.6;
+        .photo {
+          width: 260px;
+
+          height: 320px;
         }
-
-        .contact-card {
-            background-color: #f6f8fa;
-            border: 1px solid #e1e4e8;
-            border-radius: 26px;
-            padding: 20px;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .contact-card a {
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-        }
-
-	     /* Media Queries */
-        @media only screen and (max-width: 600px) {
-            .profile-pic {
-                width: 120px;
-                height: 120px;
-                left: 50%;
-            }
-
-            header {
-                padding: 1em 10px;
-                position: relative;
-            }
-
-            h1, h5 {
-                position: relative;
-                top: 120px;
-            }
-
-            section {
-                top: 120px;
-                padding: 10px;
-                position: relative;
-
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <header>
-        <img src="https://avatars.githubusercontent.com/u/33722050?v=4" alt="Profile Picture" class="profile-pic">
-        <h1 class="display-4">Arda Yıldız</h1>
-	<h5>Senior Full Stack Software Developer</h5>
-    </header>
+  <body>
+    <nav>
+      <div class="nav">
+        <div class="logo">Arda YILDIZ</div>
 
-    <section id="info-section" class="contact-card">
-        <h2>About Me</h2>
-        <p>Hi there! I'm Arda Yıldız, a passionate developer solving problems with code.</p>
-	    <p>Currently I am working on Java & Angular projects.</p>
+        <div class="menu">
+          <a href="#about">About</a>
+
+          <a href="#experience">Experience</a>
+
+          <a href="#skills">Skills</a>
+
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="left">
+        <div class="small">
+          <div class="dot"></div>
+          Open to opportunities
+        </div>
+
+        <h1>
+          Building<br />
+          <span class="gradient"> scalable Java </span><br />
+          systems.
+        </h1>
+
+        <p class="subtitle">
+          Senior Full Stack Software Engineer with 10+ years of experience
+          designing enterprise software using Java, Spring Boot, Angular, Kafka
+          and Microservices. Passionate about clean architecture, AI integration
+          and engineering excellence.
+        </p>
+        <div class="scroll">
+          SCROLL
+          <div class="arrow">↓</div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="photo">
+          <img src="pp1.png" />
+        </div>
+      </div>
     </section>
 
-    <section id="contact-section" class="contact-card">
-        <h2>Contact Me</h2>
-        <a href="https://www.linkedin.com/in/arda-yildiz-508b9620/" target="_blank" style="color: #0366d6;">
-            <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="https://stackoverflow.com/users/2807165/arday" target="_blank" style="color: #FFA33C;">
-            <i class="fab fa-stack-overflow"></i> Stack Overflow
-        </a>
-        <a href="https://github.com/abdurrahmanyildiz" target="_blank" style="color: #222;">
-            <i class="fab fa-github"></i> GitHub
-        </a>
+    <section>
+      <div class="stats">
+        <div class="stat">
+          <div class="number">10+</div>
+
+          <div class="label">Years Experience</div>
+        </div>
+
+        <div class="stat">
+          <div class="number">15+</div>
+
+          <div class="label">Enterprise Projects</div>
+        </div>
+
+        <div class="stat">
+          <div class="number">6</div>
+
+          <div class="label">Companies</div>
+        </div>
+
+        <div class="stat">
+          <div class="number">3</div>
+
+          <div class="label">Research Papers</div>
+        </div>
+      </div>
     </section>
-</body>
+    <section id="about">
+      <div style="max-width: 1000px">
+        <p
+          style="
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 20px;
+          "
+        >
+          ABOUT
+        </p>
+
+        <h2
+          style="
+            font-size: 72px;
+            line-height: 1.05;
+            letter-spacing: -3px;
+            margin-bottom: 40px;
+          "
+        >
+          I build software<br />
+
+          that scales.
+        </h2>
+
+        <p
+          style="
+            font-size: 28px;
+            line-height: 1.8;
+            color: #666;
+            max-width: 900px;
+          "
+        >
+          For more than a decade I've been designing enterprise backend
+          applications using Java, Spring Boot and distributed architectures. I
+          enjoy solving complex engineering problems, improving software quality
+          and building systems that remain reliable as they grow. Most recently,
+          I led the integration of AI agents into an enterprise Java platform to
+          automate document processing and significantly reduce execution time.
+        </p>
+      </div>
+
+      <div style="height: 70px"></div>
+
+      <div
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 25px;
+        "
+      >
+        <div class="stat">
+          <div class="number" style="font-size: 28px">Java 21</div>
+
+          <div class="label">Modern backend development</div>
+        </div>
+
+        <div class="stat">
+          <div class="number" style="font-size: 28px">Spring Boot</div>
+
+          <div class="label">REST APIs & Enterprise Applications</div>
+        </div>
+
+        <div class="stat">
+          <div class="number" style="font-size: 28px">Kafka</div>
+
+          <div class="label">Distributed Event Streaming</div>
+        </div>
+
+        <div class="stat">
+          <div class="number" style="font-size: 28px">AI</div>
+
+          <div class="label">Enterprise AI Agent Integration</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <p
+        style="
+          font-size: 18px;
+          font-weight: 700;
+          color: var(--accent);
+          margin-bottom: 20px;
+        "
+      >
+        EXPERIENCE
+      </p>
+
+      <h2 style="font-size: 70px; letter-spacing: -3px; margin-bottom: 70px">
+        Selected work.
+      </h2>
+
+      <div style="display: flex; flex-direction: column; gap: 30px">
+        <div class="stat" style="padding: 45px">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              gap: 20px;
+            "
+          >
+            <div>
+              <h3 style="font-size: 34px">Zoolatech</h3>
+
+              <p style="color: #777; margin-top: 8px">
+                Senior Software Developer / Team Lead
+              </p>
+            </div>
+
+            <div style="color: #999">2023 — Present</div>
+          </div>
+
+          <p
+            style="
+              margin-top: 30px;
+              font-size: 20px;
+              color: #555;
+              max-width: 900px;
+              line-height: 1.8;
+            "
+          >
+            Building Manufacturing Execution Systems using Java 21, Spring Boot,
+            Kafka, PostgreSQL and React. Leading backend development and AI
+            Agent integration.
+          </p>
+
+          <div class="chips">
+            <div class="chip">Java 21</div>
+
+            <div class="chip">Spring Boot</div>
+
+            <div class="chip">Kafka</div>
+
+            <div class="chip">PostgreSQL</div>
+
+            <div class="chip">React</div>
+
+            <div class="chip">AI Agents</div>
+          </div>
+        </div>
+
+        <div class="stat" style="padding: 45px">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+            "
+          >
+            <div>
+              <h3 style="font-size: 34px">General Electric</h3>
+
+              <p style="color: #777; margin-top: 8px">
+                Senior Software Engineer
+              </p>
+            </div>
+
+            <div style="color: #999">2022 — 2023</div>
+          </div>
+
+          <p
+            style="
+              margin-top: 30px;
+              font-size: 20px;
+              color: #555;
+              line-height: 1.8;
+            "
+          >
+            Developed enterprise microservices for Gas Power applications using
+            Java, Spring Boot, Angular and Oracle.
+          </p>
+
+          <div class="chips">
+            <div class="chip">Java</div>
+
+            <div class="chip">Spring Boot</div>
+
+            <div class="chip">Angular</div>
+
+            <div class="chip">Oracle</div>
+
+            <div class="chip">Docker</div>
+          </div>
+        </div>
+
+        <div class="stat" style="padding: 45px">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+            "
+          >
+            <div>
+              <h3 style="font-size: 34px">Allianz</h3>
+
+              <p style="color: #777; margin-top: 8px">
+                Senior Software Engineer
+              </p>
+            </div>
+
+            <div style="color: #999">2020 — 2022</div>
+          </div>
+
+          <p
+            style="
+              margin-top: 30px;
+              font-size: 20px;
+              color: #555;
+              line-height: 1.8;
+            "
+          >
+            Developed enterprise insurance systems with Java, Spring Boot and
+            Angular.
+          </p>
+
+          <div class="chips">
+            <div class="chip">Java</div>
+
+            <div class="chip">Spring Boot</div>
+
+            <div class="chip">Angular</div>
+
+            <div class="chip">IBM ODM</div>
+
+            <div class="chip">Oracle</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        style="
+          background: #111;
+          color: white;
+          border-radius: 40px;
+          padding: 90px;
+        "
+      >
+        <p style="font-size: 18px; color: #999; margin-bottom: 20px">
+          FEATURED PROJECT
+        </p>
+
+        <h2
+          style="
+            font-size: 72px;
+            line-height: 1;
+            margin-bottom: 40px;
+            color: white;
+          "
+        >
+          AI Agent<br />
+
+          Integration
+        </h2>
+
+        <p
+          style="
+            font-size: 26px;
+            line-height: 1.8;
+            max-width: 850px;
+            color: #d8d8d8;
+          "
+        >
+          I led the integration of AI agents into an enterprise Java application
+          to automate document processing workflows. The solution dramatically
+          reduced processing time while improving consistency and reducing
+          manual effort.
+        </p>
+
+        <div class="buttons" style="margin-top: 50px">
+          <div class="btn secondary" style="color: white; border-color: #444">
+            Java 21
+          </div>
+
+          <div class="btn secondary" style="color: white; border-color: #444">
+            Spring Boot
+          </div>
+
+          <div class="btn secondary" style="color: white; border-color: #444">
+            LLMs
+          </div>
+
+          <div class="btn secondary" style="color: white; border-color: #444">
+            AI Agents
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="skills">
+      <p
+        style="
+          font-size: 18px;
+          font-weight: 700;
+          color: var(--accent);
+          margin-bottom: 20px;
+        "
+      >
+        TECH STACK
+      </p>
+
+      <h2 style="font-size: 72px; letter-spacing: -3px; margin-bottom: 70px">
+        Built for<br />enterprise.
+      </h2>
+
+      <div
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 22px;
+        "
+      >
+        <div class="stat">
+          <div style="font-size: 42px; font-weight: 800">Java</div>
+          <p class="label">Java 8 • 11 • 17 • 21</p>
+        </div>
+
+        <div class="stat">
+          <div style="font-size: 42px; font-weight: 800">Spring Boot</div>
+          <p class="label">REST APIs • Security • JPA</p>
+        </div>
+
+        <div class="stat">
+          <div style="font-size: 42px; font-weight: 800">Kafka</div>
+          <p class="label">Distributed Messaging</p>
+        </div>
+
+        <div class="stat">
+          <div style="font-size: 42px; font-weight: 800">Microservices</div>
+          <p class="label">Cloud Native Architecture</p>
+        </div>
+
+        <div class="stat">
+          <div style="font-size: 42px; font-weight: 800">PostgreSQL</div>
+          <p class="label">High Performance SQL</p>
+        </div>
+
+        <div class="stat">
+          <div style="font-size: 42px; font-weight: 800">Oracle</div>
+          <p class="label">Enterprise Database</p>
+        </div>
+
+        <div class="stat">
+          <div style="font-size: 42px; font-weight: 800">Docker</div>
+          <p class="label">Containers</p>
+        </div>
+
+        <div class="stat">
+          <div style="font-size: 42px; font-weight: 800">Kubernetes</div>
+          <p class="label">Cloud Deployments</p>
+        </div>
+
+        <div class="stat">
+          <div style="font-size: 42px; font-weight: 800">Angular</div>
+          <p class="label">Modern Frontend</p>
+        </div>
+
+        <div class="stat">
+          <div style="font-size: 42px; font-weight: 800">React</div>
+          <p class="label">Interactive UIs</p>
+        </div>
+
+        <div class="stat">
+          <div style="font-size: 42px; font-weight: 800">Git</div>
+          <p class="label">CI / CD & Collaboration</p>
+        </div>
+
+        <div class="stat">
+          <div style="font-size: 42px; font-weight: 800">Leadership</div>
+          <p class="label">Mentoring & Agile</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p
+        style="
+          font-size: 18px;
+          font-weight: 700;
+          color: var(--accent);
+          margin-bottom: 20px;
+        "
+      >
+        EDUCATION
+      </p>
+
+      <h2 style="font-size: 72px; letter-spacing: -3px; margin-bottom: 60px">
+        Always<br />learning.
+      </h2>
+
+      <div
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+          gap: 30px;
+        "
+      >
+        <div class="stat">
+          <div style="font-size: 34px; font-weight: 700">
+            M.Sc. Computer Engineering
+          </div>
+
+          <p style="margin-top: 18px; font-size: 20px; color: #666">
+            Gazi University
+          </p>
+        </div>
+
+        <div class="stat">
+          <div style="font-size: 34px; font-weight: 700">
+            B.Sc. Computer Engineering
+          </div>
+
+          <p style="margin-top: 18px; font-size: 20px; color: #666">
+            Dokuz Eylül University
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p
+        style="
+          font-size: 18px;
+          font-weight: 700;
+          color: var(--accent);
+          margin-bottom: 20px;
+        "
+      >
+        ACHIEVEMENTS
+      </p>
+
+      <h2 style="font-size: 72px; letter-spacing: -3px; margin-bottom: 60px">
+        Recognition.
+      </h2>
+
+      <div
+        style="
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+          gap: 25px;
+        "
+      >
+        <div class="stat">
+          <div style="font-size: 28px; font-weight: 700">
+            🏆 Microsoft Imagine Cup
+          </div>
+
+          <p class="label">3rd Place — Turkey</p>
+        </div>
+
+        <div class="stat">
+          <div style="font-size: 28px; font-weight: 700">🏆 TÜBİTAK</div>
+
+          <p class="label">National Software Competition</p>
+        </div>
+
+        <div class="stat">
+          <div style="font-size: 28px; font-weight: 700">
+            🏆 Microsoft Student Partner
+          </div>
+
+          <p class="label">Campus Representative</p>
+        </div>
+
+        <div class="stat">
+          <div style="font-size: 28px; font-weight: 700">📄 Research</div>
+
+          <p class="label">3 International Publications</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="padding-bottom: 160px">
+      <div style="text-align: center">
+        <h2 style="font-size: 92px; line-height: 1; letter-spacing: -4px">
+          Let's build<br />
+
+          something great.
+        </h2>
+
+        <p
+          style="
+            margin: 40px auto;
+            max-width: 700px;
+            font-size: 24px;
+            color: #666;
+            line-height: 1.8;
+          "
+        >
+          I'm always interested in discussing backend engineering, distributed
+          systems, AI integration and exciting opportunities.
+        </p>
+
+        <div class="buttons" style="justify-content: center">
+          <a class="btn primary" href="mailto:ardayildizcs@gmail.com">
+            Email Me
+          </a>
+
+          <a
+            class="btn secondary"
+            target="_blank"
+            href="https://linkedin.com/in/arda-yildiz-508b9620"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            class="btn secondary"
+            target="_blank"
+            href="https://github.com/abdurrahmanyildiz"
+          >
+            GitHub
+          </a>
+
+          <a
+            class="btn secondary"
+            target="_blank"
+            href="https://stackoverflow.com/users/2807165/arday"
+          >
+            Stack Overflow
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      style="
+        padding: 60px;
+        text-align: center;
+        border-top: 1px solid #eee;
+        color: #999;
+      "
+    >
+      © 2026 Arda Yıldız
+
+      <br /><br />
+
+      Senior Backend Engineer · Java · Spring Boot · Microservices · AI
+    </footer>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.animate(
+                [
+                  {
+                    opacity: 0,
+                    transform: "translateY(60px)",
+                  },
+
+                  {
+                    opacity: 1,
+                    transform: "translateY(0)",
+                  },
+                ],
+                {
+                  duration: 700,
+                  fill: "forwards",
+                  easing: "ease-out",
+                },
+              );
+
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+
+      document.querySelectorAll(".stat,.buttons,h2,p").forEach((el) => {
+        el.style.opacity = 0;
+
+        observer.observe(el);
+      });
+    </script>
+  </body>
 </html>
